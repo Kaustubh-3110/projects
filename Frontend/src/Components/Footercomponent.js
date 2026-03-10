@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 export default function Footercomponent() {
+    const navigate = useNavigate();
+
     return (
         <footer className="bg-[#0f0f0f] border-t border-[#1f1f1f] mt-20">
 
@@ -22,19 +26,37 @@ export default function Footercomponent() {
                         <h3 className="text-white font-semibold mb-4">
                             Quick Links
                         </h3>
+
                         <div className="flex flex-col gap-2">
-                            <p className="hover:text-[#00f5ff] cursor-pointer transition">
+
+                            <p
+                                onClick={() => navigate('/')}
+                                className="hover:text-[#00f5ff] cursor-pointer transition"
+                            >
                                 Home
                             </p>
-                            <p className="hover:text-[#00f5ff] cursor-pointer transition">
+
+                            <p
+                                onClick={() => navigate('/shop')}
+                                className="hover:text-[#00f5ff] cursor-pointer transition"
+                            >
                                 Shop
                             </p>
-                            <p className="hover:text-[#00f5ff] cursor-pointer transition">
+
+                            <p
+                                onClick={() => navigate('/about')}
+                                className="hover:text-[#00f5ff] cursor-pointer transition"
+                            >
                                 About
                             </p>
-                            <p className="hover:text-[#00f5ff] cursor-pointer transition">
+
+                            <p
+                                onClick={() => navigate('/contact')}
+                                className="hover:text-[#00f5ff] cursor-pointer transition"
+                            >
                                 Contact
                             </p>
+
                         </div>
                     </div>
 
@@ -43,25 +65,36 @@ export default function Footercomponent() {
                         <h3 className="text-white font-semibold mb-4">
                             Connect
                         </h3>
+
                         <div className="flex flex-col gap-2">
+
                             <a
-                                href="#"
+                                href="https://instagram.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="hover:text-[#00f5ff] transition"
                             >
                                 Instagram
                             </a>
+
                             <a
-                                href="#"
+                                href="https://twitter.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="hover:text-[#00f5ff] transition"
                             >
                                 Twitter
                             </a>
+
                             <a
-                                href="#"
+                                href="https://discord.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="hover:text-[#00f5ff] transition"
                             >
                                 Discord
                             </a>
+
                         </div>
                     </div>
 

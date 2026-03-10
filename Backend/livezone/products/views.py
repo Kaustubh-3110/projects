@@ -27,6 +27,18 @@ class ProductViewSet(viewsets.ModelViewSet):
     serializer_class = ProductSerializer
     permission_classes = [AllowAny]
 
+    def get_queryset(self):
+        queryset = Product.objects.all()
+
+        sort = self.request.query_params.get('sort')
+
+        if sort == 'price_asc':
+            queryset = queryset.order_by('price')
+
+        elif sort == 'price_desc':
+            queryset = queryset.order_by('-price')
+
+        return queryset
 
 # ----------------------------
 # Order View (List + Create)
